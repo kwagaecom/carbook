@@ -275,15 +275,35 @@ socialShareButtons.forEach(function (button) {
 
 
   <!-- jQuery and Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.nav-link').on('click', function () {
-        $('.navbar-collapse').collapse('hide');
-      });
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Auto-collapse navbar on link click
+    document.querySelectorAll('.nav-item .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                bootstrap.Collapse.getInstance(navbarCollapse).hide();
+            }
+        });
     });
-  </script>
+
+    // Highlight the active link based on scroll position
+    document.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom > 100) {
+                navLinks.forEach(link => link.classList.remove("active"));
+                const activeLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+                if (activeLink) activeLink.classList.add("active");
+            }
+        });
+    });
+</script>
     <!-- END nav -->
     
 <div id="home"  class="carousel slide hero-wrap ftco-degree-bg" data-ride="carousel" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
