@@ -244,26 +244,46 @@ socialShareButtons.forEach(function (button) {
 </div>
 </section>--->
 
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light fixed-top" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .navbar-brand span {
+      color: #f39c12;
+    }
+  </style>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
-	          <li class="nav-item"><a href="#car" class="nav-link">Cars</a></li>
-	          <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#car" class="nav-link">Cars</a></li>
+          <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content for demonstration -->
+
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.nav-link').on('click', function () {
+        $('.navbar-collapse').collapse('hide');
+      });
+    });
+  </script>
     <!-- END nav -->
     
 <div id="carRentalCarousel" class="carousel slide hero-wrap ftco-degree-bg" data-ride="carousel" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
