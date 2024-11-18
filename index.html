@@ -244,66 +244,45 @@ socialShareButtons.forEach(function (button) {
 </div>
 </section>--->
 
-	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .navbar-brand span {
-      color: #f39c12;
-    }
-  </style>
+	  <div class="container-fluid nav-bar p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+        <a href="#" class="navbar-brand p-0">
+            <h1 class="display-5 text-secondary m-0">
+                <img src="img/brand-logo.png" class="img-fluid" alt="">Travisa
+            </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#home" class="nav-item nav-link active" onclick="collapseNavbar()">Home</a>
+                <a href="#about" class="nav-item nav-link" onclick="collapseNavbar()">About</a>
+                <a href="#service" class="nav-item nav-link" onclick="collapseNavbar()">Service</a>
+                <a href="#feature" class="nav-item nav-link" onclick="collapseNavbar()">Feature</a>
+                <a href="#countries" class="nav-item nav-link" onclick="collapseNavbar()">Countries</a>
+                <a href="#testimonial" class="nav-item nav-link" onclick="collapseNavbar()">Review</a>
+                <a href="#trainer" class="nav-item nav-link" onclick="collapseNavbar()">Trainer</a>
+                <a href="#contact" class="nav-item nav-link" onclick="collapseNavbar()">Contact</a>
+            </div>
+            <a href="#gallery" class="nav-item nav-link" onclick="collapseNavbar()">Gallery</a>
+        </div>
+    </nav>
+</div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#car" class="nav-link">Cars</a></li>
-          <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Content for demonstration -->
-
-
-  <!-- jQuery and Bootstrap JS -->
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    // Auto-collapse navbar on link click
-    document.querySelectorAll('.nav-item .nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                bootstrap.Collapse.getInstance(navbarCollapse).hide();
-            }
-        });
-    });
-
-    // Highlight the active link based on scroll position
-    document.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom > 100) {
-                navLinks.forEach(link => link.classList.remove("active"));
-                const activeLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
-                if (activeLink) activeLink.classList.add("active");
-            }
-        });
-    });
+function collapseNavbar() {
+    var navbarCollapse = document.getElementById("navbarCollapse");
+    var navbarToggler = document.querySelector(".navbar-toggler");
+    
+    // Collapse navbar if it's currently open
+    if (navbarCollapse.classList.contains("show")) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+        navbarToggler.classList.add("collapsed"); // Ensure the icon collapses as well
+    }
+}
 </script>
+
     <!-- END nav -->
     
 <div id="home"  class="carousel slide hero-wrap ftco-degree-bg" data-ride="carousel" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
